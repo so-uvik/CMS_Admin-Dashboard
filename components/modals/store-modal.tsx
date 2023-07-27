@@ -38,9 +38,10 @@ const StoreModal = ({}) => {
     try {
       setLoading(true);
       const response = await axios.post("/api/stores", values);
-      toast.success("Store created.");
+      window.location.assign(`/${response.data.id}`); //used this instead of redirect from next router because we want hard reload
+      toast.success("Store created.", { position: "bottom-left" });
     } catch (error) {
-      toast.error("Something went wrong.");
+      toast.error("Something went wrong.", { position: "bottom-left" });
     } finally {
       setLoading(false);
     }
@@ -82,6 +83,7 @@ const StoreModal = ({}) => {
                 Cancel
               </Button>
               <Button disabled={loading} type="submit">
+                {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : null}{" "}
                 Continue
               </Button>
             </div>
