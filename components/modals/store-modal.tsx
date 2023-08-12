@@ -83,7 +83,9 @@ const StoreModal = ({}) => {
                 Cancel
               </Button>
               <Button disabled={loading} type="submit">
-                {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : null}{" "}
+                {loading ? (
+                  <Loader2 className="w-4 h-4 animate-spin mr-1" />
+                ) : null}{" "}
                 Continue
               </Button>
             </div>
