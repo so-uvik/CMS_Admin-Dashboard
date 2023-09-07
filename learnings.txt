@@ -2,3 +2,4 @@
 #const MainNav = ({ className, ...props }:React.HTMLAttributes<HTMLElement>) => {} when you want to do this, pass type as shown
 
 When you have a function that takes (event) and typescript throws an error of it has implicitly any type, you can use 'React.ChangeEvent<any>'
+When you want to copy something to clipboard, 'navigator.clipboard.writeText(description);' more on this at components/ui/api-alert.tsx
